@@ -10,6 +10,9 @@ library(nycflights13)
 
 # Note tidyverse will mask some functions
 
+# See data sets available in nycflights13 package
+data(package = "nycflights13")
+
 # Check out the flights data using glimpse (instead of str)
 glimpse(flights)
 
