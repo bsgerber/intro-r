@@ -105,3 +105,17 @@ flights %>%
          )) %>%
   print(n=100)
 
+# Bonus!
+
+# pivot_wider to put into wide format of data
+fish_encounters %>%
+  pivot_wider(names_from = station, values_from = seen)
+
+# pivot_longer to put into long format of data
+billboard %>% 
+  pivot_longer(
+    cols = starts_with("wk"), 
+    names_to = "week", 
+    values_to = "rank",
+    values_drop_na = T
+  )
