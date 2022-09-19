@@ -108,6 +108,11 @@ flights %>%
          )) %>%
   print(n=100)
 
+# Dot notation example - the linear model lm function does not have data as first argument
+# If you use dot (.) it will represent the data frame piped in
+flights %>%
+  lm(dep_delay ~ arr_delay, data = .)
+
 # Bonus!
 
 # pivot_wider to put into wide format of data
