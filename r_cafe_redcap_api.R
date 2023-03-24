@@ -43,7 +43,7 @@ ds_2$data
 ds_3 <- REDCapR::redcap_read(
   redcap_uri = key_list("REDCap API")[1,2],
   token = key_get("REDCap API"),
-  filter_logic = "[id_language] = 'Spanish'",
+  filter_logic = "[id_language] = 'English'",
   fields = c("record_id", "id_language", "q1")
 )
 
@@ -68,7 +68,7 @@ ds_4 |>
   extract_tibble("form_1")
 
 # Look at data
-str(ds_4[[3]][[1]])
+str(ds_4[["redcap_data"]])
 
 # Use labels
 ds_4 |>
