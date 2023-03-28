@@ -1,4 +1,7 @@
 # Introduction to R and RStudio Workshop
+
+This fork includes other code used in additional R Cafe Workshops.
+
 Description: The Introduction to R and RStudio Workshop is a 1 hour workshop currently offered through the Lamar Soutter Library, UMass Medical School
 Intructor: Tess Grynoch
 
