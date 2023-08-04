@@ -1,0 +1,61 @@
+---
+title: "r medicine 2023"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## epoxy
+
+```{r}
+movie <- list(
+  year = 1989,
+  title = "Back to the Future Part II",
+  budget = 4e+07,
+  domgross = 118450002,
+  imdb_rating = 7.8,
+  actors = c(
+    "Michael J. Fox",
+    "Christopher Lloyd",
+    "Lea Thompson",
+    "Thomas F. Wilson"
+  ),
+  runtime = 108L
+)
+
+library(epoxy)
+```
+
+```{epoxy}
+The movie {.emph {.titlecase movie$title}}
+was released in {.strong movie$year}.
+It earned {.dollar movie$domgross}
+with a budget of {.dollar movie$budget},
+and it features movie stars
+{.and movie$actors}.
+```
+
+## A gtsummary example
+
+```{r}
+library(gtsummary)
+
+# Add p-values
+tbl_uvreg <- 
+  trial %>% 
+  tbl_uvregression(
+    method = glm,
+    y = response,
+    method.args = list(family = binomial),
+    exponentiate = TRUE
+  )
+```
+
+```{r}
+tbl_uvreg
+```
+
+The odds ratio for age is `r inline_text(tbl_uvreg, variable = age)`
