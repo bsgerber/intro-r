@@ -20,10 +20,11 @@ chat <- chat_ollama(model = "llama3.2", system_prompt = "
 chat$chat(question)
 
 result <- chat$extract_data(
-  "My name is Susan and I'm 13 years old",
+  "My name is Susan and I'm 65 years old. I have diabetes and hypertension and my brother takes care of me.",
   type = type_object(
     age = type_number(),
-    name = type_string()
+    name = type_string(),
+    diagnosis = type_array(items = type_string())
   )
 )
 
